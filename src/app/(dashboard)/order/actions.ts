@@ -33,7 +33,7 @@ export async function createOrder(
 
   const supabase = await createClient();
 
-  const orderId = `CAFEVIN-${Date.now()}`;
+  const orderId = `WPUCAFE-${Date.now()}`;
 
   const [orderResult, tableResult] = await Promise.all([
     supabase.from('orders').insert({
@@ -94,7 +94,7 @@ export async function createOrderTakeaway(
 
   const supabase = await createClient();
 
-  const orderId = `CAFEVIN-${Date.now()}`;
+  const orderId = `WPUCAFE-${Date.now()}`;
 
   const { error } = await supabase.from('orders').insert({
     order_id: orderId,
@@ -169,7 +169,7 @@ export async function addOrderItem(
 ) {
   const supabase = await createClient();
 
-  const payload = data.items.map(({ total, menu, ...item }) => item);
+  const payload = data.items.map(({ menu, ...item }) => item);
 
   const { error } = await supabase.from('orders_menus').insert(payload);
   if (error) {

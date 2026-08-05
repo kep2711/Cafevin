@@ -17,7 +17,13 @@ const Receipt = ({
     created_at: string;
   };
   orderMenu:
-    | { menus: Menu; quantity: number; status: string; id: string }[]
+    | {
+        menus: Menu;
+        quantity: number;
+        status: string;
+        id: string;
+        nominal: number;
+      }[]
     | null
     | undefined;
   orderId: string;
@@ -34,7 +40,7 @@ const Receipt = ({
         className="w-full flex flex-col p-8 absolute -z-10 top-0"
       >
         <h4 className="text-2xl font-bold text-center pb-4 border-b border-dashed">
-          Cafevin
+          WPU Cafe
         </h4>
         <div className="py-4 border-b border-dashed text-sm space-y-2">
           <p>
